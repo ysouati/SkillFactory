@@ -1,0 +1,130 @@
+{
+  "outcome": "accepted",
+  "winning_attempt": 1,
+  "attempts": [
+    {
+      "attempt": 0,
+      "task_id": "ate_loop_a0_6ed0",
+      "solve_status": "success",
+      "outcome": "avg_F1=0.638 (target >= 0.65); prec=0.752 rec=0.559 preds=10",
+      "accepted": false
+    },
+    {
+      "attempt": 1,
+      "task_id": "ate_loop_a1_936e",
+      "solve_status": "success",
+      "outcome": "avg_F1=0.697 (target >= 0.65); prec=0.842 rec=0.603 preds=10",
+      "accepted": true
+    }
+  ],
+  "distillation": {
+    "skill_id": "map-behavior-descriptions-to-mitre-attack-techniques",
+    "gate": "held-out TEST avg_F1>=0.65 and rubric>=0.7",
+    "scores": {
+      "optimize_best": 0.648,
+      "test": 0.562,
+      "rubric": 0.9,
+      "test_precision": 0.681,
+      "test_recall": 0.508
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "optimize": 0.408,
+        "precision": 0.703,
+        "recall": 0.304,
+        "refs": 1,
+        "kb_queries": [
+          "MITRE ATT&CK techniques for Initial Access in malware and intrusion behaviors",
+          "Execution techniques and sub-techniques used by malware and intrusions",
+          "Persistence mechanisms and their ATT&CK mappings in malware",
+          "Privilege Escalation techniques commonly observed in malware",
+          "Defense Evasion behaviors and their ATT&CK technique mappings",
+          "Credential Access techniques used by malware and intrusions",
+          "Discovery techniques including system, network, and domain discovery",
+          "Lateral Movement techniques and their ATT&CK mappings",
+          "Collection techniques for data gathering by malware",
+          "Exfiltration methods and corresponding ATT&CK techniques",
+          "Impact techniques used by malware including data destruction and service disruption",
+          "Network command and control protocols and their ATT&CK sub-techniques"
+        ]
+      },
+      {
+        "epoch": 1,
+        "optimize": 0.467,
+        "precision": 0.642,
+        "recall": 0.387,
+        "refs": 1,
+        "kb_queries": [
+          "Comprehensive mapping of adversary behaviors to MITRE ATT&CK techniques and sub-techniques",
+          "Detailed taxonomy and definitions of MITRE ATT&CK tactic categories: initial access, execution, persistence, privilege escalation, defense evasion, credential access, discovery, lateral movement, collection, command and control, exfiltration, impact",
+          "Rules for distinguishing parent techniques from sub-techniques based on explicit mechanism mentions",
+          "Behavior extraction best practices from free-text malware and intrusion descriptions",
+          "Decision criteria for mapping generic outcomes versus explicit mechanisms to ATT&CK techniques",
+          "Social engineering techniques and their ATT&CK mappings, including spearphishing, user execution, and delivery methods",
+          "Injection and code execution techniques, including process injection variants, DLL hijacking, and shellcode execution",
+          "Command and control protocol-specific mappings, including HTTP, HTTPS, DNS, and custom protocols",
+          "Credential access techniques, including OS credential stores, keylogging, and credential dumping",
+          "Discovery techniques: enumeration of files, processes, accounts, groups, software, and network information",
+          "Collection techniques: data harvesting, clipboard capture, audio/video recording, staged data collection",
+          "Exfiltration methods: network protocols, cloud storage, encrypted channels, and data staging"
+        ]
+      },
+      {
+        "epoch": 2,
+        "optimize": 0.648,
+        "precision": 0.731,
+        "recall": 0.59,
+        "refs": 1,
+        "kb_queries": [
+          "Comprehensive overview of MITRE ATT&CK tactics and techniques across the entire adversary lifecycle",
+          "Detailed mapping of adversary behavior descriptions to ATT&CK techniques and sub-techniques",
+          "Behavioral indicators and textual patterns for reconnaissance and resource development techniques",
+          "Common and uncommon initial access methods and their textual signatures",
+          "Execution techniques and their distinguishing textual cues, including script and command shell usage",
+          "Persistence mechanisms and how to identify them from behavior descriptions",
+          "Privilege escalation behaviors and their explicit indicators in text",
+          "Defense evasion techniques and textual evidence supporting them",
+          "Credential access methods and how to differentiate targeted credential stores",
+          "Discovery behaviors versus collection behaviors and their textual differentiation",
+          "Lateral movement techniques and their behavioral signatures",
+          "Command and control protocols and how to identify specific sub-techniques from text"
+        ]
+      },
+      {
+        "epoch": 3,
+        "optimize": 0.638,
+        "precision": 0.747,
+        "recall": 0.571,
+        "refs": 1,
+        "kb_queries": [
+          "Comprehensive mapping of adversary behaviors to MITRE ATT&CK techniques across all tactics",
+          "Behavioral indicators and textual patterns for pre-compromise reconnaissance and resource development techniques",
+          "Execution techniques and their observable behaviors in free-text descriptions",
+          "Persistence mechanisms and their textual indicators in adversary behavior descriptions",
+          "Privilege escalation behaviors and how to distinguish them in natural language",
+          "Defense evasion techniques and common textual cues for mapping",
+          "Credential access behaviors including credential dumping, harvesting, and interception",
+          "Discovery techniques and how to differentiate host enumeration from reconnaissance",
+          "Lateral movement behaviors and their textual signatures",
+          "Collection techniques including file and data gathering behaviors",
+          "Command and control communication methods and protocol-specific indicators",
+          "Exfiltration techniques and textual evidence for data theft and transfer"
+        ]
+      },
+      {
+        "epoch": 4,
+        "optimize": 0.501,
+        "precision": 0.587,
+        "recall": 0.449,
+        "refs": 1
+      }
+    ],
+    "passed": false,
+    "stored": false,
+    "registered": null,
+    "optimize_rows": 15,
+    "test_rows": 15,
+    "mode": "textgrad-optimize"
+  }
+}

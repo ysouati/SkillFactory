@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Local environment
+.env
+.env.*
+
+# Runtime / generated artifacts
+traces/
+workspaces/
+review_queue/
+kb_data/
+qdrant_data/
+benchmarks/multihop_rag/qdrant/
+
+# Session scratch
+skills/distilled/_backup_*/
+
+# Benchmark run logs and result dumps (regenerate by re-running the benchmarks)
+*.log
+
+
+# Presentation material and scratch files (not part of the code)
+*.pptx
+scratch.*

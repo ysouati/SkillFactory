@@ -1,0 +1,36 @@
+{
+  "n": 2255,
+  "depth": 10,
+  "configs": {
+    "dense": {
+      "mrr": 0.781,
+      "map": 0.584,
+      "recall": 82.2,
+      "hits": 98.8
+    },
+    "dense+sparse": {
+      "mrr": 0.821,
+      "map": 0.635,
+      "recall": 84.4,
+      "hits": 99.4
+    },
+    "hybrid_rrf": {
+      "mrr": 0.808,
+      "map": 0.617,
+      "recall": 84.2,
+      "hits": 99.4
+    },
+    "+metadata": {
+      "mrr": 0.797,
+      "map": 0.645,
+      "recall": 88.2,
+      "hits": 99.7
+    },
+    "+rerank": {
+      "mrr": 0.858,
+      "map": 0.695,
+      "recall": 88.2,
+      "hits": 99.7
+    }
+  }
+}

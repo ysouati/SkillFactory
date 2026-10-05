@@ -1,0 +1,32 @@
+[
+  {
+    "id": "pdf-summarize",
+    "name": "PDF summarization",
+    "description": "Use when the user wants to summarize, extract key points from, or produce an executive summary of a PDF document. Triggers on requests like 'summarize this PDF', 'give me the key points from this paper', 'TL;DR of this report'. Handles research papers, business reports, contracts, and books."
+  },
+  {
+    "id": "csv-clean",
+    "name": "CSV data cleanup",
+    "description": "Use when the user has messy tabular data (CSV, TSV, or Excel exported as CSV) and wants it cleaned or normalized. Triggers on requests like 'clean this data', 'normalize the date columns', 'fix inconsistent whitespace', 'deduplicate rows', 'standardize the currency values'. Not for building formulas or charts."
+  },
+  {
+    "id": "excel-financial-model",
+    "name": "Excel financial modeling",
+    "description": "Use when the user wants to build a financial model in Excel (.xlsx): DCF valuations, 3-statement models, revenue forecasts, budget projections, sensitivity analyses. Triggers on requests like 'build a DCF for X', '5-year forecast', 'cap table model', 'budget spreadsheet with scenarios'. Not for simple charts or CSV cleanup."
+  },
+  {
+    "id": "meeting-notes-structurer",
+    "name": "Meeting notes structurer",
+    "description": "Use when the user has raw meeting transcripts, Zoom captions, or bullet notes and wants them structured into decisions made, action items with owners, and open questions. Triggers on requests like 'turn this transcript into action items', 'extract decisions from these notes', 'summarize what was agreed'."
+  },
+  {
+    "id": "phishing-email-analysis",
+    "name": "Phishing email analysis",
+    "description": "Use when the user has a suspicious email (raw headers, body text, attachments, or a forwarded copy) and wants to determine whether it's a phishing attempt or business email compromise. Triggers on requests like 'is this email phishing', 'analyze these email headers', 'check the links in this message', 'is this attachment safe', 'is the sender spoofed', 'this email looks fishy'. Handles SPF/DKIM/DMARC header authentication, URL/domain reputation, social engineering pattern detection. Not for building anti-phishing infrastructure or configuring email filters at scale."
+  },
+  {
+    "id": "security-log-analysis",
+    "name": "Security log analysis",
+    "description": "Use when the user has security-relevant logs (Windows Event Log, syslog, auth.log, cloud audit trails like AWS CloudTrail, firewall or IDS logs) and wants to identify suspicious patterns, failed authentication clusters, privilege escalation attempts, brute force attacks, or indicators of compromise. Triggers on requests like 'find brute force attempts in this log', 'anything suspicious in these auth events', 'trace this alert to root cause', 'is my server being attacked', 'hundreds of failed logins'. Not for general log parsing without a security angle, or for setting up real-time monitoring infrastructure."
+  }
+]

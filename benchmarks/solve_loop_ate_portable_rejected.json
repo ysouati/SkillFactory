@@ -1,0 +1,45 @@
+{
+  "outcome": "accepted",
+  "winning_attempt": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "task_id": "ate_loop_a0_9a85",
+      "solve_status": "success",
+      "outcome": "avg_F1=0.685 (target >= 0.6); prec=0.875 rec=0.569 preds=10",
+      "accepted": true
+    }
+  ],
+  "distillation": {
+    "task_id": "ate_loop_a0_9a85",
+    "validated": true,
+    "gate": "held-out outcome>=0.6 and rubric>=0.7",
+    "best_pass": 0,
+    "scores": {
+      "reconstruction": 0.745,
+      "outcome": 0.414,
+      "rubric": 0.9,
+      "overall": 0.626
+    },
+    "passed": false,
+    "attempts": [
+      {
+        "pass": 0,
+        "reconstruction": 0.745,
+        "outcome": 0.414,
+        "rubric": 0.9,
+        "overall": 0.626
+      },
+      {
+        "pass": 1,
+        "reconstruction": 0.603,
+        "outcome": 0.429,
+        "rubric": 0.88,
+        "overall": 0.599
+      }
+    ],
+    "skill_id": "map-behavior-descriptions-to-mitre-attack-technique-ids",
+    "stored": false,
+    "heldout_rows": 10
+  }
+}

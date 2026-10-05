@@ -1,0 +1,92 @@
+[
+  {
+    "name": "CTI-VSP",
+    "task": "Batch-score these CVEs for severity. TSV: https://raw.githubusercontent.com/xashru/cti-bench/main/data/cti-vsp.tsv (Description = CVE text, GT = the correct CVSS v3.1 vector). Do the first 20 rows. Predict each CVE's CVSS v3.1 base score FROM THE DESCRIPTION ONLY (do not read or use the GT column when predicting) and tell me how close we are to ground truth.",
+    "criteria": "For the first 20 CVEs, output a CVSS v3.1 base score between 0.0 and 10.0 for each. Each prediction must be made from the CVE Description only; the GT vector must NOT be read or used when predicting, only afterward for scoring. Compute the base score implied by each GT vector and report the mean absolute error between predicted and ground-truth base scores. The mean absolute error must be at most 2.0.",
+    "task_id": "bench_0e59c81e",
+    "solve_status": "success",
+    "final_answer": "Predictions for the first 20 CVEs, using only the Description text for prediction, and then compared against GT-derived CVSS v3.1 base scores:\n\n| # | CVE | Predicted base score | GT base score | Abs. error |\n|---|---|---:|---:|---:|\n| 1 | CVE-2024-23848 | 5.5 | 5.5 | 0.0 |\n| 2 | CVE-2023-38738 | 7.5 | 8.1 | 0.6 |\n| 3 | CVE-2024-22137 | 5.4 | 5.4 | 0.0 |\n| 4 | CVE-2024-20819 | 7.8 | 7.8 | 0.0 |\n| 5 | CVE-2024-0585 | 5.4 | 5.4 | 0.0 |\n| 6 | CVE-2022-4958 | 5.4 | 5.4 | 0.0 |\n| 7 | CVE-2023-41776 | 7.8 | 7.8 | 0.0 |\n| 8 | CVE-2022-40700 | 8.8 | 9.8 | 1.0 |\n| 9 | CVE-2024-24570 | 6.1 | 6.1 | 0.0 |\n| 10 | CVE-2024-0690 | 5.5 | 5.5 | 0.0 |\n| 11 | CVE-2024-0782 | 5.4 | 6.1 | 0.7 |\n| 12 | CVE-2022-36764 | 8.1 | 7.8 | 0.3 |\n| 13 | CVE-2023-48353 | 4.4 | 4.4 | 0.0 |\n| 14 | CVE-2024-22198 | 8.8 | 8.8 ",
+    "met": true,
+    "summary": "All criteria are explicitly satisfied with clear evidence, including valid score ranges, use of only descriptions for prediction, correct GT score computation, MAE reporting, and MAE within the required limit.",
+    "checklist": [
+      {
+        "criterion": "1. Output a CVSS v3.1 base score between 0.0 and 10.0 for each of the first 20 CVEs.",
+        "passed": true,
+        "note": "All 20 predicted base scores are numeric and within the 0.0 to 10.0 range as shown in the table."
+      },
+      {
+        "criterion": "2. Make each prediction using only the CVE Description; do not read or use the ground-truth vector when predicting.",
+        "passed": true,
+        "note": "The method explicitly uses only the Description text to generate heuristic CVSS vectors and scores, without referencing the GT vector."
+      },
+      {
+        "criterion": "3. Compute the base score implied by each ground-truth vector.",
+        "passed": true,
+        "note": "The code parses each GT vector and computes the base score using a standard CVSS v3.1 scoring function, as evidenced by the cvss31_base_score function and printed GT base scores."
+      },
+      {
+        "criterion": "4. Report the mean absolute error between predicted and ground-truth base scores.",
+        "passed": true,
+        "note": "The mean absolute error (MAE) is explicitly computed and reported as 0.13."
+      },
+      {
+        "criterion": "5. Ensure the mean absolute error is at most 2.0.",
+        "passed": true,
+        "note": "The reported MAE is 0.13, which is well below the threshold of 2.0."
+      }
+    ]
+  },
+  {
+    "name": "CTI-ATE",
+    "task": "Map these threat-report descriptions to MITRE ATT&CK techniques. TSV: https://raw.githubusercontent.com/xashru/cti-bench/main/data/cti-ate.tsv (Description = the report text, GT = correct comma-separated technique IDs). Do the first 20 rows (extract techniques FROM THE DESCRIPTION ONLY \u2014 do not read or use the GT column when predicting) and tell me how well we match the ground truth.",
+    "criteria": "For each of the first 20 rows, output a set of MITRE ATT&CK technique IDs in T#### form. Each prediction must come from the Description only; the GT column must NOT be read or used when predicting, only afterward for scoring. Compute precision, recall, and F1 of the predicted technique set against the GT set per row, and report the averages. Average F1 must be at least 0.3.",
+    "task_id": "bench_83b4021a",
+    "solve_status": "over_budget",
+    "final_answer": "Predictions for first 20 rows and scoring against GT\n\n1\tT1071,T1083,T1222,T1573\tP=0.750\tR=0.750\tF1=0.750\n2\tT1057,T1059,T1071,T1082,T1083,T1573\tP=1.000\tR=1.000\tF1=1.000\n3\tT1055,T1059,T1071,T1105,T1140,T1518\tP=1.000\tR=0.857\tF1=0.923\n4\tT1068,T1071,T1082,T1105,T1111,T1497,T1562\tP=0.000\tR=0.000\tF1=0.000\n5\tT1005,T1059,T1071,T1083,T1105,T1140\tP=1.000\tR=1.000\tF1=1.000\n6\tT1059,T1546,T1573\tP=1.000\tR=1.000\tF1=1.000\n7\tT1069,T1087,T1482,T1590\tP=0.750\tR=0.600\tF1=0.667\n8\tT1005,T1059,T1071,T1547,T1573\tP=0.800\tR=0.571\tF1=0.667\n9\tT1027,T1036,T1055,T1068,T1564,T1657\tP=0.000\tR=0.000\tF1=0.000\n10\tT1071,T1115,T1217,T1547,T1555,T1573\tP=0.667\tR=0.500\tF1=0.571\n11\tT1016,T1027,T1033,T1091,T1105,T1125,T1547\tP=0.571\tR=0.667\tF1=0.615\n12\tT1041,T1071,T1083,T1123,T1547,T1614\tP=0.000\tR=0.000\tF1=0.000\n13\tT1133\tP=0.000\tR=0.00",
+    "met": true,
+    "summary": "All acceptance criteria are clearly satisfied with explicit evidence provided for each.",
+    "checklist": [
+      {
+        "criterion": "1. For each of the first 20 rows, output a set of MITRE ATT&CK technique IDs in T#### form.",
+        "passed": true,
+        "note": "All 20 rows have predicted technique sets with valid T#### IDs."
+      },
+      {
+        "criterion": "2. Each predicted technique ID must be derived from the Description field only.",
+        "passed": true,
+        "note": "The predictions are explicitly stated to be derived from the Description field only, without using GT."
+      },
+      {
+        "criterion": "3. The GT (ground truth) column must not be read or used when making predictions.",
+        "passed": true,
+        "note": "The method and code comments confirm GT was not used for prediction, only for scoring after prediction."
+      },
+      {
+        "criterion": "4. Compute precision, recall, and F1 score of the predicted technique set against the GT set for each of the first 20 rows.",
+        "passed": true,
+        "note": "Precision, recall, and F1 are computed and reported for each of the 20 rows."
+      },
+      {
+        "criterion": "5. Report the average precision, average recall, and average F1 score across the 20 rows.",
+        "passed": true,
+        "note": "Macro-average precision, recall, and F1 are computed and reported."
+      },
+      {
+        "criterion": "6. The average F1 score must be at least 0.3.",
+        "passed": true,
+        "note": "The average F1 score is 0.478, which is above the 0.3 threshold."
+      }
+    ]
+  },
+  {
+    "name": "CTI-MCQ",
+    "task": "Answer these CTI multiple-choice questions. TSV: https://raw.githubusercontent.com/xashru/cti-bench/main/data/cti-mcq.tsv (Question plus columns 'Option A'..'Option D', GT = the correct letter). Do the first 25 rows (answer FROM THE QUESTION AND OPTIONS ONLY \u2014 do not read or use the GT column when answering) and report accuracy.",
+    "criteria": "Answer each of the first 25 questions with a single option letter A, B, C, or D. Each answer must be produced from the question and options only; the GT column must NOT be read or used when answering, only afterward for scoring. Report exact-match accuracy against the GT column. Accuracy must be at least 70%.",
+    "task_id": "bench_fe69a080",
+    "solve_status": "timeout",
+    "final_answer": "None",
+    "met": false,
+    "summary": "solve timed out \u2014 nothing to verify",
+    "checklist": []
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "outcome": "accepted",
+  "winning_attempt": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "task_id": "ate_loop_a0_1b2d",
+      "solve_status": "success",
+      "outcome": "avg_F1=0.637 (target >= 0.6); prec=0.743 rec=0.564 preds=10",
+      "accepted": true
+    }
+  ],
+  "distillation": {
+    "skill_id": "map-behavior-descriptions-to-mitre-attack-techniques",
+    "gate": "held-out TEST avg_F1>=0.6 and rubric>=0.7",
+    "scores": {
+      "optimize_best": 0.691,
+      "test": 0.65,
+      "rubric": 0.87,
+      "test_precision": 0.715,
+      "test_recall": 0.62
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "optimize": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "refs": 2,
+        "kb_queries": [
+          "Comprehensive mapping of malware and intrusion behavior phrases to MITRE ATT&CK techniques across all tactic categories",
+          "Behavioral indicators and keywords for Initial Access techniques in MITRE ATT&CK",
+          "Execution techniques and their common behavior descriptions and artifacts",
+          "Persistence mechanisms and their typical behavioral indicators",
+          "Privilege Escalation techniques and associated observable behaviors",
+          "Defense Evasion tactics including obfuscation, masquerading, timestomping, and artifact hiding",
+          "Credential Access behaviors including keylogging, credential dumping, and password store access",
+          "Discovery techniques and common behavior phrases for system, network, and domain enumeration",
+          "Lateral Movement techniques and their behavioral signatures",
+          "Collection techniques including file collection, clipboard capture, and form grabbing",
+          "Command and Control behaviors including protocol usage, encoding, and communication patterns",
+          "Exfiltration methods and their observable behaviors"
+        ]
+      },
+      {
+        "epoch": 1,
+        "optimize": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "refs": 2,
+        "kb_queries": [
+          "Comprehensive mapping of Initial Access techniques including phishing, exploitation, external remote services, and resource development",
+          "Execution techniques across platforms including command interpreters, scripting languages, system binaries, and code injection methods",
+          "Persistence mechanisms such as autostart execution, registry modifications, scheduled tasks, and application startup behaviors",
+          "Privilege escalation techniques including exploitation of vulnerabilities, access token manipulation, and credential dumping",
+          "Defense evasion methods including obfuscation, code signing, disabling security tools, and timestomping",
+          "Credential access techniques including credential dumping, input capture, and credential harvesting across platforms",
+          "Discovery behaviors such as network scanning, system information gathering, and permission group discovery",
+          "Lateral movement techniques including remote services, pass-the-hash, and exploitation of remote systems",
+          "Collection methods including data from local system, clipboard, input capture, and screen capture",
+          "Command and Control techniques including use of common protocols, custom protocols, and proxying",
+          "Exfiltration methods including data transfer over HTTP, cloud storage, and encrypted channels",
+          "Impact techniques including data destruction, ransomware, and service disruption"
+        ]
+      },
+      {
+        "epoch": 2,
+        "optimize": 0.691,
+        "precision": 0.748,
+        "recall": 0.658,
+        "refs": 2
+      }
+    ],
+    "passed": true,
+    "stored": true,
+    "registered": "map-behavior-descriptions-to-mitre-attack-techniques",
+    "optimize_rows": 15,
+    "test_rows": 15,
+    "mode": "textgrad-optimize"
+  }
+}

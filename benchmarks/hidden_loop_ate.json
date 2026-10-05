@@ -1,0 +1,42 @@
+{
+  "outcome": "exhausted",
+  "bar": 0.65,
+  "attempts": [
+    {
+      "attempt": 0,
+      "task_id": "hbl_ate_0_11e4a",
+      "status": "success",
+      "predictions": 15,
+      "metric": "avg_F1",
+      "value": 0.558,
+      "avg_precision": 0.608,
+      "avg_recall": 0.526,
+      "scored_rows": 15,
+      "accepted": false
+    },
+    {
+      "attempt": 1,
+      "task_id": "hbl_ate_1_90518",
+      "status": "success",
+      "predictions": 15,
+      "metric": "avg_F1",
+      "value": 0.59,
+      "avg_precision": 0.63,
+      "avg_recall": 0.561,
+      "scored_rows": 15,
+      "accepted": false
+    },
+    {
+      "attempt": 2,
+      "task_id": "hbl_ate_2_92ba9",
+      "status": "success",
+      "predictions": 15,
+      "metric": "avg_F1",
+      "value": 0.569,
+      "avg_precision": 0.62,
+      "avg_recall": 0.533,
+      "scored_rows": 15,
+      "accepted": false
+    }
+  ]
+}

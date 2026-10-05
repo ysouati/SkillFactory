@@ -1,0 +1,13 @@
+{
+  "task": "ate",
+  "task_id": "hb_ate_7fbfea",
+  "solve_status": "success",
+  "rows": 15,
+  "predictions_returned": 15,
+  "bar": "avg_F1 >= 0.5",
+  "metric": "avg_F1",
+  "value": 0.549,
+  "avg_precision": 0.649,
+  "avg_recall": 0.481,
+  "scored_rows": 15
+}

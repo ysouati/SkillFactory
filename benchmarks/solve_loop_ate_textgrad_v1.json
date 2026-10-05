@@ -1,0 +1,67 @@
+{
+  "outcome": "accepted",
+  "winning_attempt": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "task_id": "ate_loop_a0_6105",
+      "solve_status": "success",
+      "outcome": "avg_F1=0.625 (target >= 0.6); prec=0.825 rec=0.515 preds=10",
+      "accepted": true
+    }
+  ],
+  "distillation": {
+    "skill_id": "map-malware-descriptions-to-mitre-attack-techniques",
+    "gate": "held-out TEST avg_F1>=0.6 and rubric>=0.7",
+    "scores": {
+      "optimize_best": 0.512,
+      "test": 0.607,
+      "rubric": 0.85,
+      "test_precision": 0.727,
+      "test_recall": 0.538
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "optimize": 0.38,
+        "precision": 0.681,
+        "recall": 0.278,
+        "refs": 3
+      },
+      {
+        "epoch": 1,
+        "optimize": 0.438,
+        "precision": 0.657,
+        "recall": 0.343,
+        "refs": 3
+      },
+      {
+        "epoch": 2,
+        "optimize": 0.481,
+        "precision": 0.668,
+        "recall": 0.393,
+        "refs": 3
+      },
+      {
+        "epoch": 3,
+        "optimize": 0.489,
+        "precision": 0.635,
+        "recall": 0.409,
+        "refs": 3
+      },
+      {
+        "epoch": 4,
+        "optimize": 0.512,
+        "precision": 0.655,
+        "recall": 0.433,
+        "refs": 3
+      }
+    ],
+    "passed": true,
+    "stored": true,
+    "registered": "map-malware-descriptions-to-mitre-attack-techniques",
+    "optimize_rows": 15,
+    "test_rows": 15,
+    "mode": "textgrad-optimize"
+  }
+}

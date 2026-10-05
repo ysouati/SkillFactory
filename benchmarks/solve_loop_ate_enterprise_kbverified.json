@@ -1,0 +1,47 @@
+{
+  "outcome": "accepted",
+  "winning_attempt": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "task_id": "ate_loop_a0_5a6c",
+      "solve_status": "success",
+      "outcome": "avg_F1=0.678 (target >= 0.6); prec=0.75 rec=0.629 preds=10",
+      "accepted": true
+    }
+  ],
+  "distillation": {
+    "task_id": "ate_loop_a0_5a6c",
+    "validated": true,
+    "gate": "held-out outcome>=0.6 and rubric>=0.7",
+    "best_pass": 0,
+    "scores": {
+      "reconstruction": 0.873,
+      "outcome": 0.805,
+      "rubric": 0.9,
+      "overall": 0.847
+    },
+    "passed": true,
+    "attempts": [
+      {
+        "pass": 0,
+        "reconstruction": 0.873,
+        "outcome": 0.805,
+        "rubric": 0.9,
+        "overall": 0.847
+      },
+      {
+        "pass": 1,
+        "reconstruction": 0.869,
+        "outcome": 0.689,
+        "rubric": 0.87,
+        "overall": 0.779
+      }
+    ],
+    "skill_id": "map-descriptions-to-mitre-attack-techniques",
+    "stored": true,
+    "skill_md": "C:\\Users\\MSI\\Documents\\UWaterloo\\Sketches\\skill-factory\\skills\\distilled\\map-descriptions-to-mitre-attack-techniques.SKILL.md",
+    "registered": "map-descriptions-to-mitre-attack-techniques",
+    "heldout_rows": 10
+  }
+}
