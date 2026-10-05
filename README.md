@@ -12,18 +12,18 @@ The pipeline has seven stages: Route, Solve, Retrieve, Distill, Validate, Store,
 
 Built and working:
 
-- **Route** — embed the task, search stored skill descriptions, and judge whether to reuse
+- **Route** : embed the task, search stored skill descriptions, and judge whether to reuse
   a skill or build a new one (`router/`).
-- **Solve** — a code-writing agent (smolagents `CodeAgent`) solves a task, optionally in a
+- **Solve** : a code-writing agent (smolagents `CodeAgent`) solves a task, optionally in a
   Docker sandbox, with file and shell tools (`factory/`).
-- **Retrieve** — a knowledge base over MITRE ATT&CK, CWE, and NIST text, served over HTTP so
+- **Retrieve** : a knowledge base over MITRE ATT&CK, CWE, and NIST text, served over HTTP so
   the agent can query it while solving (`kb/`).
-- **Distill** — turn a successful trace into a portable skill: a generalized `SKILL.md` plus
+- **Distill** : turn a successful trace into a portable skill: a generalized `SKILL.md` plus
   reference docs, with the knowledge the tools returned written into the references so the
   skill works without those tools (`distill/`).
-- **Validate** — re-solve held-out instances with only the skill, score the result, and store
+- **Validate** : re-solve held-out instances with only the skill, score the result, and store
   the skill only if it clears a threshold.
-- **Store** — write the skill to `skills/distilled/` and register it so the router can find it.
+- **Store** : write the skill to `skills/distilled/` and register it so the router can find it.
 
 Not built yet:
 
